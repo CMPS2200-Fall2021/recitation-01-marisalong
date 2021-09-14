@@ -37,15 +37,16 @@ def _binary_search(mylist, key, left, right):
 	Returns:
 	  index of key in mylist, or -1 if not present.
 	"""
-	if left >= right:
-		return -1
-	middle = (left+right)//2
-	if key == mylist[middle]:
-		return middle
-	elif key > mylist[middle]:
-		return _binary_search(mylist, key, middle+1, right)
+	if right >= left:
+		middle = (left+right)//2
+		if key == mylist[middle]:
+			return middle
+		elif key > mylist[middle]:
+			return _binary_search(mylist, key, middle+1, right)
+		else:
+			return _binary_search(mylist, key, middle-1, left)
 	else:
-		return _binary_search(mylist, key, middle-1, left)
+		return -1
 
 def test_binary_search():
 	assert binary_search([1,2,3,4,5], 5) == 4
