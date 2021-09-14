@@ -62,10 +62,20 @@ For both of these, the best case runtime would be O(1) because the key would be 
 - [ ] 8. Call `print_results(compare_search())` and paste the results here:
 
 **TODO: add your timing results here**
+|        n |   linear |   binary |
+|----------|----------|----------|
+|       10 |    0.003 |    0.004 |
+|      100 |    0.010 |    0.005 |
+|     1000 |    0.107 |    0.008 |
+|    10000 |    1.305 |    0.015 |
+|   100000 |   14.704 |    0.031 |
+|  1000000 |  207.099 |    0.032 |
+| 10000000 | 2113.163 |    0.049 |
 
 - [ ] 9. The theoretical worst-case running time of linear search is $O(n)$ and binary search is $O(log_2(n))$. Do these theoretical running times match your empirical results? Why or why not?
 
 **TODO: your answer goes here**
+The theoretical and empirical results for both linear and binary search seem to roughly match. For linear search, the empirical results show that each time n increases by a factor of 10, the linear search time increase by roughly a factor of 10. Theoretically, the worst-case runtime for linear search is O(n) for n elements, which yields the same result.  For binary search, the empirical results show that each time n increases by a factor of 10, the binary search time increases by roughly a factor of log_2 10. Theoretically, the worst-case runtime for linear search is O(log_2 n) for n elements, which aligns with our empirical results. 
 
 - [ ] 10. Binary search assumes the input list is already sorted. Assume it takes $\Theta(n^2)$ time to sort a list of length $n$. Suppose you know ahead of time that you will search the same list $k$ times.
   + What is worst-case complexity of searching a list of $n$ elements $k$ times using linear search? **TODO: your answer goes here**
